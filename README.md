@@ -1,73 +1,48 @@
-# React + TypeScript + Vite
+#  Kanban Board - React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Project developed with the aim of practicing and consolidating knowledge in React through the creation of a Kanban-style application.
 
-Currently, two official plugins are available:
+The proposal is to apply fundamental concepts from the library while developing a functional interface for organizing tasks.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+##  About the Project
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This project simulates a Kanban board where it is possible:
 
-## Expanding the ESLint configuration
+- Create tasks
+- Move tasks between columns
+- Organize activities by status
+- Work with reusable states and components
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+The main idea is practical learning and continuous evolution.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+##  Technologies Used
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- React
+- JavaScript (ES6+)
+- TypeScript
+- CSS / Styled Components (if used)
+- Vite / Create React App (put whatever you are using)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+##  Features
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- [x] Create new task
+- [x] Move tasks between columns
+- [x] Component-based framework
+- [ ] Persistence in LocalStorage (if you don't have it yet, you can leave it as a future feature)
+- [ ] Drag and Drop
+
+
+---
+
+##  How to Run the Project
+
+Clone the repository:
+_*It will soon be added to the pages*_
+```bash
+git remote add origin https://github.com/MauroSantosIf/React-Kaban.git 
