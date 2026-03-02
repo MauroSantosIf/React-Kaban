@@ -1,0 +1,56 @@
+.TaskList{
+    flex: 1;
+    padding: 8px;
+    border-radius: 6px;
+   
+}
+
+.TaskList div{
+    font-weight: bold;
+    color: #fff;
+}
+
+.TaskList .title{
+    padding: 4px;
+    font-weight: bold;
+
+    text-align: center;
+}
+
+.TaskList .content{
+    padding: 16px 4px;
+    gap: 8px;
+}
+
+
+/*Estilização de cada quadro do kaban*/
+.pendente{
+    background-color:#cfd6e7;
+    border-radius: 4px;
+}
+
+.pendente .title{
+    background-color: #bfc8de;
+    border-radius: 8px;
+}
+
+
+.em-andamento{
+    background-color:#3a7dcc;
+    border-radius: 4px;
+}
+
+.em-andamento .title{
+    background-color: #2e5a9c;
+    border-radius: 8px;
+}
+
+.concluido{
+    background-color:#5fa4c4;
+    border-radius: 4px;
+}
+
+.concluido .title{
+    background-color: #4ea1b6;
+    border-radius: 8px;
+}
