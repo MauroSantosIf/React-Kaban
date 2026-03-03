@@ -17,9 +17,38 @@
     text-align: center;
 }
 
+.container button {
+    margin-top: 50px;
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #2e5a9c, #1e3c72);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.container button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+.container button:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
 .TaskList .content{
-    padding: 16px 4px;
+    padding: 8px 2px;
     gap: 8px;
+    display:flex;
+    flex-direction: column;
 }
 
 

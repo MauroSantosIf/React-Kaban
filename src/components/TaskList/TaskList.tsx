@@ -1,10 +1,35 @@
+import './TaskList.css';
+import PropTypes from 'prop-types';
 import React from "react";
-import './TaskList.css'
 
-export default function TaskList({title, className}: {title: string, className: string}) {
+export default function TaskList({title, className, onAddTask, tasks}) {
+
+    const addTask = () => {
+        onAddTask('Nova Tarefa', "Pendente"); // Chamando a função onAddTask passada como prop, passando o título da nova tarefa e o estado (que é o título da lista)
+    }    
+
     return(
         <div className={`TaskList ${className}`}>
             <div className="title">{title}</div>
+
+            <div className="content">
+
+                {tasks.map((task)=>{
+                    return <div key={task.id}>{task.title}</div>
+                })}
+
+            </div>
+
+            <button onClick={addTask}>Adicionar Tarefa</button>
         </div>
     )
+}
+
+
+//Alterando o escopo da propTypes para o componente TaskList
+TaskList.propTypes={
+    title:PropTypes.string.isRequired,
+    className:PropTypes.string.isRequired,
+    onAddTask: PropTypes.func.isRequired,
+    tasks: PropTypes.array.isRequired
 }
