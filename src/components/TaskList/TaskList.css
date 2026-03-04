@@ -1,85 +1,119 @@
-.TaskList{
+/* ============================= */
+/* Estrutura Base da Lista */
+/* ============================= */
+
+.TaskList {
     flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Título padrão */
+.TaskList .title {
     padding: 8px;
-    border-radius: 6px;
-   
-}
-
-.TaskList div{
     font-weight: bold;
-    color: #fff;
-}
-
-.TaskList .title{
-    padding: 4px;
-    font-weight: bold;
-
     text-align: center;
+    border-radius: 8px;
 }
 
-.container button {
-    margin-top: 50px;
+/* Conteúdo interno */
+.TaskList .content {
+    padding: 10px 4px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ============================= */
+/* Botão Base */
+/* ============================= */
+
+.TaskList button {
+    margin-top: 40px;
     width: 100%;
     padding: 10px 12px;
     border-radius: 8px;
-    background: linear-gradient(135deg, #2e5a9c, #1e3c72);
-    color: white;
     border: none;
     cursor: pointer;
     font-weight: 600;
     font-size: 14px;
     letter-spacing: 0.5px;
+    color: white;
 
     transition: all 0.2s ease-in-out;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-.container button:hover {
+.TaskList button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
 }
 
-.container button:active {
+.TaskList button:active {
     transform: translateY(0);
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
-.TaskList .content{
-    padding: 8px 2px;
-    gap: 8px;
-    display:flex;
-    flex-direction: column;
+/* ============================= */
+/* ESTADOS DO KANBAN */
+/* ============================= */
+
+/* 🔘 PENDENTE */
+
+.pendente {
+    background-color: #cfd6e7;
+    border-radius: 8px;
 }
 
-
-/*Estilização de cada quadro do kaban*/
-.pendente{
-    background-color:#cfd6e7;
-    border-radius: 4px;
-}
-
-.pendente .title{
+.pendente .title {
     background-color: #bfc8de;
+    color: #1e2a44;
+}
+
+.pendente button {
+    background: linear-gradient(135deg, #aeb7cc, #8f9ab8);
+}
+
+.pendente button:hover {
+    box-shadow: 0 6px 14px rgba(120, 130, 160, 0.4);
+}
+
+/* 🔵 EM ANDAMENTO */
+
+.em-andamento {
+    background-color: #3a7dcc;
     border-radius: 8px;
 }
 
-
-.em-andamento{
-    background-color:#3a7dcc;
-    border-radius: 4px;
-}
-
-.em-andamento .title{
+.em-andamento .title {
     background-color: #2e5a9c;
+    color: #fff;
+}
+
+.em-andamento button {
+    background: linear-gradient(135deg, #2e5a9c, #1e3c72);
+}
+
+.em-andamento button:hover {
+    box-shadow: 0 6px 14px rgba(30, 60, 114, 0.4);
+}
+
+/* 🟢 CONCLUÍDO */
+
+.concluido {
+    background-color: #d4f0e2;
     border-radius: 8px;
 }
 
-.concluido{
-    background-color:#5fa4c4;
-    border-radius: 4px;
+.concluido .title {
+    background-color: #2e8b57;
+    color: #fff;
 }
 
-.concluido .title{
-    background-color: #4ea1b6;
-    border-radius: 8px;
+.concluido button {
+    background: linear-gradient(135deg, #2e8b57, #1f6f46);
+}
+
+.concluido button:hover {
+    box-shadow: 0 6px 14px rgba(31, 111, 70, 0.4);
 }

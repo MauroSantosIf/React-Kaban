@@ -1,11 +1,19 @@
 import './TaskList.css';
 import PropTypes from 'prop-types';
 import React from "react";
+import TaskItem from '../TaskItem/TaskItem';
 
-export default function TaskList({title, className, onAddTask, tasks}) {
+export default function TaskList({
+    title, 
+    className, 
+    onAddTask, 
+    tasks, 
+    onTaskUpdate, 
+    taskState
+    }) {
 
     const addTask = () => {
-        onAddTask('Nova Tarefa', "Pendente"); // Chamando a função onAddTask passada como prop, passando o título da nova tarefa e o estado (que é o título da lista)
+        onAddTask('Nova Tarefa', taskState); // Chamando a função onAddTask passada como prop, passando o título da nova tarefa e o estado (que é o título da lista)
     }    
 
     return(
@@ -15,7 +23,13 @@ export default function TaskList({title, className, onAddTask, tasks}) {
             <div className="content">
 
                 {tasks.map((task)=>{
-                    return <div key={task.id}>{task.title}</div>
+                    return <TaskItem 
+                            key={task.id} 
+                            id={task.id} 
+                            title={task.title} 
+                            taskState={task.state} 
+                            onTaskUpdate={onTaskUpdate}
+                    />
                 })}
 
             </div>

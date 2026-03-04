@@ -13,11 +13,6 @@ const generateId = () => {
   return idCounter;
 };
 
-const tasks = { // Nosso objeto que representa uma tarefa
-  id:generateId(),
-  title: 'Nova Tarefa',
-  state: 'Pendente'
-}
 
 
 export default function App() {
@@ -39,15 +34,53 @@ export default function App() {
 
   };
 
+  const onTaskUpdate = (id: number, title: string, state: string) => {
+    setTask((existingTasks) => {
+      return existingTasks.map((task) => {
+        if (task.id === id) {
+          return {...task, title, state};
+        }else{
+          return task;
+        }
+      }
+    )});
+  }
   
   return (
     <div className="App">
       <Navbar />
       <div className='container'>
-        <TaskList className="pendente" title="Pendente" onAddTask={addTask}  tasks={task}/> 
+        <TaskList 
+                className="pendente"
+                title="Pendente"
+                onAddTask={addTask}
+                taskState={"Pendente"}
+                tasks={task.filter((t) => t.state === "Pendente")}
+                onTaskUpdate={onTaskUpdate}
+                
+        />
+         
+         
+        <TaskList 
+                className="em-andamento" 
+                title="Em Andamento" 
+                onAddTask={addTask}  
+                taskState={"Em Andamento"}
+                tasks={task.filter((t) => t.state === "Em Andamento")} 
+                onTaskUpdate={onTaskUpdate}
+                
+        />
+
+        <TaskList 
+                className="concluido" 
+                title="Concluído" 
+                onAddTask={addTask}  
+                taskState={"Concluído"}
+                tasks={task.filter((t) => t.state === "Concluído")} 
+                onTaskUpdate={onTaskUpdate}
+        />  
         {/*Passando a função addTask como prop para o componente TaskList*/}
-        {/* <TaskList className="em-andamento" title="Em Andamento" />
-        <TaskList className="concluido" title="Concluído" /> */}
+        
 
       </div>
     </div>
