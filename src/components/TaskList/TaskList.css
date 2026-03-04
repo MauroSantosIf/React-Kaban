@@ -1,7 +1,3 @@
-/* ============================= */
-/* Estrutura Base da Lista */
-/* ============================= */
-
 .TaskList {
     flex: 1;
     padding: 12px;
@@ -26,10 +22,6 @@
     flex-direction: column;
 }
 
-/* ============================= */
-/* Botão Base */
-/* ============================= */
-
 .TaskList button {
     margin-top: 40px;
     width: 100%;
@@ -42,6 +34,11 @@
     letter-spacing: 0.5px;
     color: white;
 
+    display: flex;            
+    align-items: center; /*centraliza vertical */
+    justify-content: center; /* centraliza horizontal */
+    gap: 6px;/* espaço entre imagem e texto */
+
     transition: all 0.2s ease-in-out;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
@@ -53,12 +50,7 @@
 .TaskList button:active {
     transform: translateY(0);
 }
-
-/* ============================= */
-/* ESTADOS DO KANBAN */
-/* ============================= */
-
-/* 🔘 PENDENTE */
+/*PENDENTE */
 
 .pendente {
     background-color: #cfd6e7;
@@ -78,7 +70,7 @@
     box-shadow: 0 6px 14px rgba(120, 130, 160, 0.4);
 }
 
-/* 🔵 EM ANDAMENTO */
+/*EM ANDAMENTO */
 
 .em-andamento {
     background-color: #3a7dcc;
@@ -98,7 +90,7 @@
     box-shadow: 0 6px 14px rgba(30, 60, 114, 0.4);
 }
 
-/* 🟢 CONCLUÍDO */
+/*CONCLUÍDO */
 
 .concluido {
     background-color: #d4f0e2;
@@ -117,3 +109,8 @@
 .concluido button:hover {
     box-shadow: 0 6px 14px rgba(31, 111, 70, 0.4);
 }
+
+.img {
+    width: 16px;
+    height: 16px;
+} 

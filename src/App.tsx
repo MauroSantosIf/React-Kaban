@@ -46,6 +46,13 @@ export default function App() {
     )});
   }
   
+  const deleteTask = (id: number) => {
+    {/*Toda task que tiver o id igual ao id passado como parâmetro */}
+    setTask((existingTasks) => {
+      return existingTasks.filter((task) => task.id !== id);
+    })
+  }
+
   return (
     <div className="App">
       <Navbar />
@@ -57,6 +64,7 @@ export default function App() {
                 taskState={"Pendente"}
                 tasks={task.filter((t) => t.state === "Pendente")}
                 onTaskUpdate={onTaskUpdate}
+                onDeleteTask={deleteTask}
                 
         />
          
@@ -68,6 +76,7 @@ export default function App() {
                 taskState={"Em Andamento"}
                 tasks={task.filter((t) => t.state === "Em Andamento")} 
                 onTaskUpdate={onTaskUpdate}
+                onDeleteTask={deleteTask}
                 
         />
 
@@ -78,6 +87,7 @@ export default function App() {
                 taskState={"Concluído"}
                 tasks={task.filter((t) => t.state === "Concluído")} 
                 onTaskUpdate={onTaskUpdate}
+                onDeleteTask={deleteTask}
         />  
         {/*Passando a função addTask como prop para o componente TaskList*/}
         

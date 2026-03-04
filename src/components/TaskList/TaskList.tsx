@@ -2,6 +2,7 @@ import './TaskList.css';
 import PropTypes from 'prop-types';
 import React from "react";
 import TaskItem from '../TaskItem/TaskItem';
+import plusIcon from '../../assets/plus-icon.svg';
 
 export default function TaskList({
     title, 
@@ -9,8 +10,9 @@ export default function TaskList({
     onAddTask, 
     tasks, 
     onTaskUpdate, 
-    taskState
-    }) {
+    taskState,
+    onDeleteTask
+}) {
 
     const addTask = () => {
         onAddTask('Nova Tarefa', taskState); // Chamando a função onAddTask passada como prop, passando o título da nova tarefa e o estado (que é o título da lista)
@@ -29,12 +31,16 @@ export default function TaskList({
                             title={task.title} 
                             taskState={task.state} 
                             onTaskUpdate={onTaskUpdate}
+                            onDeleteTask={onDeleteTask}
                     />
                 })}
 
             </div>
 
-            <button onClick={addTask}>Adicionar Tarefa</button>
+            <button onClick={addTask} className='btn'>
+                <img className='img' src={plusIcon} alt="Adicionar Tarefa" />
+                Adicionar Tarefa
+            </button>
         </div>
     )
 }
